@@ -3,6 +3,13 @@ from django.conf import settings
 from django.utils import timezone
 
 
+class BuzzPublishedManager(models.Manager):
+    def get_queryset(self):
+        return (
+            super().get_queryset().filter(status=Buzz.Status.PUBLISHED)
+        )
+
+
 class Buzz(models.Model):
     class Status(models.TextChoices):
         PUBLISHED = 'PBL', 'Published'
@@ -24,6 +31,8 @@ class Buzz(models.Model):
         choices=Status,
         default=Status.DRAFT
     )
+
+    published = BuzzPublishedManager()
 
     class Meta:
         verbose_name_plural = 'Buzzes'
