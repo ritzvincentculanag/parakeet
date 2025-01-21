@@ -26,6 +26,7 @@ class Buzz(models.Model):
     )
 
     class Meta:
+        verbose_name_plural = 'Buzzes'
         ordering = ['-publish']
         indexes = [
             models.Index(fields=['-publish'])
