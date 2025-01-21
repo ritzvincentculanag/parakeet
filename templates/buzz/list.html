@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Buzzes
+{% endblock title %}
+
+{% block content %}
+    {% for buzz in buzzes %}
+        <h1>{{ buzz.title }}</h1>
+        <p>{{ buzz.body|truncatewords:50 }}</p>
+    {% endfor %}
+{% endblock content %}
