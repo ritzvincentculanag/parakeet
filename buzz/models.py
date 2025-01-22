@@ -33,6 +33,7 @@ class Buzz(models.Model):
     )
 
     published = BuzzPublishedManager()
+    objects = models.Manager()
 
     class Meta:
         verbose_name_plural = 'Buzzes'
