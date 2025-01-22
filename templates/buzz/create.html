@@ -3,7 +3,16 @@
 {% load crispy_forms_tags %}
 
 {% block center %}
-  <form method="post">
-    {{ form|crispy }}
-  </form>
+  <div class="box">
+    <h2 class="is-size-4">What's Buzzing?</h2>
+    <br>
+    <form action="{% url 'buzz:buzz_create' %}" method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button 
+        class="button is-warning is-align-item-flex-end">
+        Buzz It!
+      </button>
+    </form>
+  </div>
 {% endblock center %}

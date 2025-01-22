@@ -15,17 +15,17 @@ def buzz_list(request):
     )
 
 def buzz_create(request):
-    form = None
+    form = BuzzCreateForm()
 
-    if request.method != 'POST':
-        form = BuzzCreateForm()
-    else:
-        form = BuzzCreateForm(data=request.GET)
-        form.save(commit=False)
-        form.author = request.user
-        form.save()
-
-        return redirect(to=reverse('buzz:buzz_list'))
+    if request.method == 'POST':
+        form = BuzzCreateForm(data=request.POST)
+        
+        if form.is_valid:
+            buzz = form.save(commit=False)
+            buzz.author = request.user
+            buzz.save()
+            
+            return redirect(to=reverse('buzz:buzz_list'))
 
     return render(
         request=request,
