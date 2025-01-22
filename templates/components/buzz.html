@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">
+          {% if buzz.author.first_name %}
+            {{ buzz.author.first_name }}
+          {% else %}
+            {{ buzz.author.username|title }}
+          {% endif %}
+        </p>
+        <p class="subtitle is-6">@{{ buzz.author.username }}</p>
+      </div>
+    </div>
+    <div class="content">
+      {{ buzz.body }}
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item has-text-warning">Hive Up</a>
+    <a href="#" class="card-footer-item has-text-black">Edit</a>
+    <a href="#" class="card-footer-item has-text-black">Delete</a>
+  </footer>
+</div>
