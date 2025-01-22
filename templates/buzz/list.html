@@ -5,16 +5,15 @@
 {% endblock title %}
 
 {% block content %}
-<div class="fixed-grid has-4-cols">
-  <div class="grid">
-    <div class="cell"></div>
-    <div class="cell is-col-span-2">
-      {% for buzz in buzzes %}
-        {% include "components/buzz.html" with buzz=buzz %}
-      {% endfor %}
+  <div class="fixed-grid has-4-cols">
+    <div class="grid">
+      <div class="cell"></div>
+      <div class="cell is-col-span-2">
+        {% for buzz in buzzes %}
+          {% include "components/buzz.html" with buzz=buzz %}
+        {% endfor %}
+      </div>
+      <div class="cell"></div>
     </div>
-    <div class="cell"></div>
   </div>
-</div>
-  
 {% endblock content %}

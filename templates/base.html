@@ -16,7 +16,9 @@
 </head>
 <body>
   <header class="container">
-    {% include "navbar.html" %}
+    {% if not user.is_authenticated %}
+      {% include "navbar.html" %}
+    {% endif %}
   </header>
   <main class="container">
     {% block content %}
