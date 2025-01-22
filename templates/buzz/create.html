@@ -1,0 +1,12 @@
+{% extends "buzz/list.html" %}
+
+{% block center %}
+  <form action="">
+    <div class="field">
+      {{ form.title.as_field_group }}
+      <label for="" class="label">Title</label>
+
+    </div>
+  </form>
+  {{ form.as_p }}
+{% endblock center %}
