@@ -20,7 +20,7 @@ def buzz_create(request):
     if request.method == 'POST':
         form = BuzzCreateForm(data=request.POST)
         
-        if form.is_valid:
+        if form.is_valid():
             buzz = form.save(commit=False)
             buzz.author = request.user
             buzz.save()
