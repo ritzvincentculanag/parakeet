@@ -32,6 +32,7 @@ class Buzz(models.Model):
         default=Status.DRAFT
     )
 
+    objects = models.Manager()
     published = BuzzPublishedManager()
 
     class Meta:

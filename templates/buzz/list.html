@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Buzzes
+  Buzzes
 {% endblock title %}
 
 {% block content %}
-    {% for buzz in buzzes %}
-        <h1>{{ buzz.title }}</h1>
-        <p>{{ buzz.body|truncatewords:50 }}</p>
-    {% endfor %}
+  <div class="fixed-grid has-4-cols">
+    <div class="grid">
+      <div class="cell">
+        {% block left %}
+        {% endblock left %}
+      </div>
+      <div class="cell is-col-span-2">
+        {% block center %}
+          {% include "components/messages.html" %}
+
+          {% for buzz in buzzes %}
+            {% include "components/buzz.html" with buzz=buzz %}
+          {% endfor %}
+        {% endblock center %}
+      </div>
+      <div class="cell">
+        {% block right %}
+        {% endblock right %}
+      </div>
+    </div>
+  </div>
 {% endblock content %}
