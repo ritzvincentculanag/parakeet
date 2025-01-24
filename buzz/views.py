@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 
 from buzz.models import Buzz
@@ -32,3 +32,18 @@ def buzz_create(request):
         template_name='buzz/create.html',
         context={ 'form': form }
     )
+
+def buzz_delete(request, id):
+    buzz = get_object_or_404(klass=Buzz, id=id)
+
+    if request.method == 'POST':
+        buzz.delete()
+
+        return redirect(reverse('buzz:buzz_list'))
+
+    return render(
+        request=request,
+        template_name='buzz/delete.html',
+        context={ 'buzz': buzz }
+    )
+
