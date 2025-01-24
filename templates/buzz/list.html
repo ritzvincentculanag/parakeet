@@ -13,6 +13,8 @@
       </div>
       <div class="cell is-col-span-2">
         {% block center %}
+          {% include "components/messages.html" %}
+
           {% for buzz in buzzes %}
             {% include "components/buzz.html" with buzz=buzz %}
           {% endfor %}
