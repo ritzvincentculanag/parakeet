@@ -32,8 +32,8 @@ class Buzz(models.Model):
         default=Status.DRAFT
     )
 
-    published = BuzzPublishedManager()
     objects = models.Manager()
+    published = BuzzPublishedManager()
 
     class Meta:
         verbose_name_plural = 'Buzzes'
