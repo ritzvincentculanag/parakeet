@@ -1,4 +1,46 @@
-<div class="card">
+{% load static %}
+
+<div class="box no-radius">
+  <h3 class="title is-4">
+    {% if buzz.author.first_name %}
+      {{ buzz.author.first_name }}
+    {% else %}
+      {{ buzz.author.username|title }}
+    {% endif %}
+  </h3>
+  <h4 class="subtitle">@{{ buzz.author.username }}</h4>
+  <p class="content">
+    {{ buzz.body }}
+  </p>
+  <div class="columns is-vcentered">
+    <div class="column column-button">
+      <span class="icon-text">
+        <div class="icon">
+          <i class="bx bx-star"></i>
+        </div>
+      </span>
+      <span>Hive it!</span>
+    </div>
+    <div class="column column-button">
+      <span class="icon-text">
+        <div class="icon">
+          <i class='bx bx-message-square-dots' ></i>
+        </div>
+      </span>
+      <span>Comment</span>
+    </div>
+    <div class="column column-button">
+      <span class="icon-text">
+        <div class="icon">
+          <i class='bx bx-share' ></i>
+        </div>
+      </span>
+      <span>Share</span>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="card">
   <div class="card-content">
     <div class="media">
       <div class="media-content">
@@ -21,4 +63,4 @@
     <a href="#" class="card-footer-item has-text-black">Edit</a>
     <a href="#" class="card-footer-item has-text-black">Delete</a>
   </footer>
-</div>
+</div> -->
