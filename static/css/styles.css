@@ -1,0 +1,19 @@
+.no-radius {
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid rgb(64, 70, 84);
+  margin-bottom: 0 !important;
+}
+
+.cell-feed {
+  border-left: 1px solid rgb(64, 70, 84);
+  border-right: 1px solid rgb(64, 70, 84);
+}
+
+.column-button {
+  cursor: pointer;
+}
+
+.column-button:hover {
+  color: rgb(255, 183, 15);
+}
