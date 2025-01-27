@@ -7,12 +7,16 @@ from buzz.forms import BuzzCreateForm
 
 
 def buzz_list(request):
+    form = BuzzCreateForm()
     buzzes = Buzz.published.all()
 
     return render(
         request=request,
         template_name='buzz/list.html',
-        context={ 'buzzes': buzzes }
+        context={ 
+            'buzzes': buzzes,
+            'form': form 
+        }
     )
 
 def buzz_create(request):
