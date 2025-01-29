@@ -11,8 +11,9 @@
         {% block left %}
         {% endblock left %}
       </div>
-      <div class="cell is-col-span-2">
+      <div class="cell cell-feed is-col-span-2">
         {% block center %}
+          {% include "components/buzz_header.html" %}
           {% include "components/messages.html" %}
 
           {% for buzz in buzzes %}
