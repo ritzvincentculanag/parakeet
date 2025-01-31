@@ -1,0 +1,41 @@
+{% extends "feed.html" %}
+
+{% block feed %}
+  {% for post in posts %}
+    <article class="post">
+      <section class="post__handle">
+        <h2 class="handle__name">
+          {% if post.author.first_name %}
+          <label>0</label>
+            {{ post.author.first_name }}
+          {% else %}
+            {{ post.author.first_name }}
+          {% endif %}
+        </h2>
+        <h3>{{ post.author.username }}</h3>
+      </section>
+      <p class="post__content">
+        {{ post.content }}
+      </p>
+      <form>
+        <div class="form-group form-group__like">
+          <label>{{ post.likes }}</label>
+          <button>
+            <i class='bx bx-star'></i>
+          </button>
+        </div>
+        <div class="form-group form-group__comment">
+          <label>0</label>
+          <button>
+            <i class='bx bx-message-alt-dots'></i>
+          </button>
+        </div>
+        <div class="form-group form-group__share">
+          <button>
+            <i class='bx bx-share'></i>
+          </button>
+        </div>
+      </form>
+    </article>
+  {% endfor %}
+{% endblock feed %}
