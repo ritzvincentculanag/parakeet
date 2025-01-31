@@ -7,11 +7,16 @@ class PostForm(ModelForm):
     class Meta:
         model = Post
         fields = ['content','status']
+        labels = { 
+            'content': '',
+            'status': '',
+        }
         widgets = { 
             'content': Textarea(
                 attrs={
-                    'cols': 80,
-                    'rows': 10
+                    'class': 'post-create__content',
+                    'placeholder': 'What\'s chirping?',
+                    'rows': 5,
                 }
             )
         }
