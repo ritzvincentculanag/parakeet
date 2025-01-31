@@ -12,11 +12,16 @@
   font-family: sans-serif;
 }
 
+input {
+  display: block;
+}
+
 main {
   display: grid;
   grid-template-columns: 25% 50% 25%;
   margin: auto;
   width: 80%;
+  overflow-y: hidden;
 }
 
 .link {
@@ -36,12 +41,45 @@ main {
   border-left: 1px solid var(--clr-stroke);
   border-right: 1px solid var(--clr-stroke);
   overflow-y: scroll;
+  height: 100vh;
 }
 
 /* post lists styles */
-.post {
+.post,
+.post-create {
   padding: 16px;
   border-bottom: 1px solid var(--clr-stroke);
+}
+
+.post-create__content {
+  border: none;
+  width: 100%;
+  padding: 8px;
+  resize: none;
+  border-radius: 4px;
+  border: 1px solid var(--clr-stroke);
+  margin-bottom: 16px;
+}
+
+.post-create__actions {
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.post-create__actions > * {
+  font-size: 1rem;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.post-create__actions input {
+  background-color: var(--clr-accent);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  border: inherit;
 }
 
 .post__body {
