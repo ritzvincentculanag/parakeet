@@ -15,7 +15,7 @@ class Post(models.Model):
         PUBLISHED = 'PBL', 'Published'
 
     content = models.CharField(max_length=250)
-    likes = models.IntegerField()
+    likes = models.IntegerField(default=0)
     created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
         max_length=3,
