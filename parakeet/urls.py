@@ -24,14 +24,14 @@ urlpatterns = [
     path(
         route='pages/', 
         view=include(
-            args='pages.urls', 
+            'pages.urls', 
             namespace='pages'
         )
     ),
     path(
         route='posts/', 
         view=include(
-            args='posts.urls', 
+            'posts.urls', 
             namespace='posts'
         )
     ),
