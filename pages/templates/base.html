@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,13 @@
     {% block title %}
     {% endblock title %}
   </title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
   {% block body %}
