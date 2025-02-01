@@ -15,7 +15,6 @@ class Post(models.Model):
         PUBLISHED = 'PBL', 'Published'
 
     content = models.CharField(max_length=250)
-    likes = models.IntegerField(default=0)
     created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
         max_length=3,
@@ -33,9 +32,23 @@ class Post(models.Model):
 
     def __str__(self):
         return self.content[:50]
-    
+
     class Meta:
         ordering = ['-created']
         indexes = [
             models.Index(fields=['-created'])
         ]
+
+
+class Like(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey(
+        to=Post,
+        on_delete=models.CASCADE,
+        related_name='likes'
+    )
+    author = models.ForeignKey(
+        to=settings.AUTH_USER_MODEL,
+        related_name='likes',
+        on_delete=models.CASCADE
+    )
