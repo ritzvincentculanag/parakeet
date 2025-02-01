@@ -1,8 +1,8 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 
 from posts.forms import PostForm
-from posts.models import Post
+from posts.models import Post, Like
 
 
 def post_list(request):
@@ -35,3 +35,6 @@ def post_create(request):
         template_name='posts/list.html',
         context= { 'form': form }
     )
+
+def post_like(request, post_id):
+    pass

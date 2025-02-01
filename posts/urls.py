@@ -14,5 +14,10 @@ urlpatterns = [
         route='create/',
         view=post_create,
         name='post_create'
+    ),
+    path(
+        route='like/<int:post_id>/',
+        view=post_like,
+        name='post_like'
     )
 ]
