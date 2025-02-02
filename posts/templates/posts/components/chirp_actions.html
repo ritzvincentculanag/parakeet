@@ -1,7 +1,7 @@
-<section class="post__actions">
+<section class="post__engagements">
 	<form
 		action="{% url 'posts:post_like' post.pk %}"
-		class="form form--post-like"
+		class="engagement engagement--like"
 		method="post"
 	>
 		{% csrf_token %}
@@ -10,18 +10,18 @@
 		</button>
 		<label>0</label>
 	</form>
-	<div>
+	<div class="engagement engagement--reply">
 		<button>
 			<i class='bx bx-message-alt-dots'></i>
 		</button>
 		<label>0</label>
 	</div>
-	<div>
+	<div class="engagement engagement--share">
 		<button>
 			<i class='bx bx-share'></i>
 		</button>
 	</div>
-	<p class="post__show_thread">
+	<p class="post__show">
 		<a class="link" href="#">
 			Show this thread
 		</a>
