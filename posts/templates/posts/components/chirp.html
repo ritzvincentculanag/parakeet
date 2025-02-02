@@ -1,0 +1,24 @@
+{% load static %}
+
+<article class="post">
+	<section class="post__avatar">
+		<img src="{% static 'img/kid.jpg' %}" alt="Profile picture">
+	</section>
+	<section class="post__body">
+		<section class="post__handle">
+			<h2 class="post__name">
+				{% if post.author.first_name and post.author.last_name %}
+					{{ post.author.first_name }} {{ post.author.last_name }}
+				{% else %}
+					{{ post.author.username }}
+				{% endif %}
+			</h2>
+			<h3 class="post__username">
+				@{{ post.username }}
+			</h3>
+			<p class="post__content">
+				{{ post.content }}
+			</p>
+		</section>
+	</section>
+</article>
