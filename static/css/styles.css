@@ -12,142 +12,142 @@
   font-family: sans-serif;
 }
 
-input {
-  display: block;
-}
+/*input {*/
+/*  display: block;*/
+/*}*/
 
-main {
-  display: grid;
-  grid-template-columns: 25% 50% 25%;
-  margin: auto;
-  width: 80%;
-  overflow-y: hidden;
-}
+/*main {*/
+/*  display: grid;*/
+/*  grid-template-columns: 25% 50% 25%;*/
+/*  margin: auto;*/
+/*  width: 80%;*/
+/*  overflow-y: hidden;*/
+/*}*/
 
-.link {
-  color: #167ABA;
-  text-decoration: none;
-}
+/*.link {*/
+/*  color: #167ABA;*/
+/*  text-decoration: none;*/
+/*}*/
 
-.profile {
-  height: 100vh;
-}
+/*.profile {*/
+/*  height: 100vh;*/
+/*}*/
 
-.trending {
-  height: 100vh;
-}
+/*.trending {*/
+/*  height: 100vh;*/
+/*}*/
 
-.feed {
-  border-left: 1px solid var(--clr-stroke);
-  border-right: 1px solid var(--clr-stroke);
-  overflow-y: scroll;
-  height: 100vh;
-}
+/*.feed {*/
+/*  border-left: 1px solid var(--clr-stroke);*/
+/*  border-right: 1px solid var(--clr-stroke);*/
+/*  overflow-y: scroll;*/
+/*  height: 100vh;*/
+/*}*/
 
-/* post lists styles */
-.post,
-.post-create {
-  padding: 16px;
-  border-bottom: 1px solid var(--clr-stroke);
-}
+/*!* post lists styles *!*/
+/*.post,*/
+/*.post-create {*/
+/*  padding: 16px;*/
+/*  border-bottom: 1px solid var(--clr-stroke);*/
+/*}*/
 
-.post-create__content {
-  border: none;
-  width: 100%;
-  padding: 8px;
-  resize: none;
-  border-radius: 4px;
-  border: 1px solid var(--clr-stroke);
-  margin-bottom: 16px;
-}
+/*.post-create__content {*/
+/*  border: none;*/
+/*  width: 100%;*/
+/*  padding: 8px;*/
+/*  resize: none;*/
+/*  border-radius: 4px;*/
+/*  border: 1px solid var(--clr-stroke);*/
+/*  margin-bottom: 16px;*/
+/*}*/
 
-.post-create__actions {
-  display: flex;
-  margin-left: auto;
-  justify-content: flex-end;
-  gap: 8px;
-}
+/*.post-create__actions {*/
+/*  display: flex;*/
+/*  margin-left: auto;*/
+/*  justify-content: flex-end;*/
+/*  gap: 8px;*/
+/*}*/
 
-.post-create__actions > * {
-  font-size: 1rem;
-  padding: 8px;
-  cursor: pointer;
-}
+/*.post-create__actions > * {*/
+/*  font-size: 1rem;*/
+/*  padding: 8px;*/
+/*  cursor: pointer;*/
+/*}*/
 
-.post-create__actions input {
-  background-color: var(--clr-accent);
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  border: inherit;
-}
+/*.post-create__actions input {*/
+/*  background-color: var(--clr-accent);*/
+/*  border: none;*/
+/*  border-radius: 4px;*/
+/*  color: #fff;*/
+/*  border: inherit;*/
+/*}*/
 
-.post__body {
-  display: flex;
-}
+/*.post__body {*/
+/*  display: flex;*/
+/*}*/
 
-.post__avatar img {
-  border-radius: 4px;
-}
+/*.post__avatar img {*/
+/*  border-radius: 4px;*/
+/*}*/
 
-.post__info {
-  padding-left: 8px;
-  width: 100%;
-}
+/*.post__info {*/
+/*  padding-left: 8px;*/
+/*  width: 100%;*/
+/*}*/
 
-.post__avatar > * {
-  display: block;
-  width: 60px;
-  height: 60px;
-}
+/*.post__avatar > * {*/
+/*  display: block;*/
+/*  width: 60px;*/
+/*  height: 60px;*/
+/*}*/
 
-.post__handle {
-  display: flex;
-  grid-area: handle;
-}
+/*.post__handle {*/
+/*  display: flex;*/
+/*  grid-area: handle;*/
+/*}*/
 
-.handle__name,
-.handle__username {
-  font-size: 1rem;
-}
+/*.handle__name,*/
+/*.handle__username {*/
+/*  font-size: 1rem;*/
+/*}*/
 
-.handle__username {
-  color: var(--clr-subtitle);
-  padding-left: 4px;
-}
+/*.handle__username {*/
+/*  color: var(--clr-subtitle);*/
+/*  padding-left: 4px;*/
+/*}*/
 
-.post__content {
-  grid-area: content;
-  padding-top: 8px;
-  padding-bottom: 16px;
-}
+/*.post__content {*/
+/*  grid-area: content;*/
+/*  padding-top: 8px;*/
+/*  padding-bottom: 16px;*/
+/*}*/
 
-.post__actions,
-.post__actions .form-group {
-  display: flex;
-}
+/*.post__actions,*/
+/*.post__actions .form-group {*/
+/*  display: flex;*/
+/*}*/
 
-.post__actions {
-  gap: 32px;
-}
+/*.post__actions {*/
+/*  gap: 32px;*/
+/*}*/
 
-.form-group {
-  font-size: 1rem;
-  justify-content: center;
-  align-items: center;
-}
+/*.form-group {*/
+/*  font-size: 1rem;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*}*/
 
-.form-group .bx {
-  font-size: 1.2rem;
-  padding-right: 8px;
-}
+/*.form-group .bx {*/
+/*  font-size: 1.2rem;*/
+/*  padding-right: 8px;*/
+/*}*/
 
-.form-group button {
-  cursor: pointer;
-  border: none;
-  background: none;
-}
+/*.form-group button {*/
+/*  cursor: pointer;*/
+/*  border: none;*/
+/*  background: none;*/
+/*}*/
 
-.post__show-thread {
-  margin-left: auto;
-}
+/*.post__show-thread {*/
+/*  margin-left: auto;*/
+/*}*/
