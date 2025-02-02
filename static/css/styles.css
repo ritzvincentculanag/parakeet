@@ -4,6 +4,7 @@
 	--clr-text: #1A1A1A;
 	--clr-text-light: #FAFAFA;
 	--clr-subtitle: #5A5A5A;
+	--clr-bg-light: #F3F3F3;
 }
 
 * {
@@ -11,6 +12,10 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: sans-serif;
+}
+
+body {
+	background: var(--clr-bg-light);
 }
 
 main {
@@ -24,7 +29,7 @@ main {
 img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover ;
+	object-fit: cover;
 	display: block;
 }
 
@@ -40,16 +45,20 @@ a:hover {
 
 /* feed styles */
 .feed {
-	border: 1px solid var(--clr-stroke);
 	height: 100%;
 	overflow-y: scroll;
 	margin-top: 24px;
-	border-radius: 8px;
 }
 
 /* Chirps form styles */
 .form {
 	padding: 8px;
+}
+
+.form--post {
+	margin-bottom: 16px;
+	border: 1px solid var(--clr-stroke);
+	background: var(--clr-text-light);
 }
 
 .form__post-content {
@@ -101,10 +110,17 @@ a:hover {
 }
 
 /* post styles */
+.posts .post:first-child {
+	border-top: 1px solid var(--clr-stroke);
+}
+
 .post {
 	display: flex;
 	padding: 8px;
 	border-bottom: 1px solid var(--clr-stroke);
+	border-right: 1px solid var(--clr-stroke);
+	border-left: 1px solid var(--clr-stroke);
+	background: var(--clr-text-light);
 }
 
 .post__avatar__img {
