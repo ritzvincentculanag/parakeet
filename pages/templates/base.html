@@ -3,25 +3,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    {% block title %}
-    {% endblock title %}
-  </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		{% block title %}
+		{% endblock title %}
+	</title>
 
-  <!-- Styles -->
+	<!-- Styles -->
 	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-  
-  <!-- Boxicons -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 <body>
-  {% block body %}
-  {% endblock body %}
+<header>
+	{% include 'navbar.html' %}
+</header>
 
-  <script src="{% static 'js/index.js' %}"></script>
+{% block body %}
+{% endblock body %}
+
+<script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>
