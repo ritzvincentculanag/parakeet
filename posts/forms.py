@@ -14,9 +14,15 @@ class PostForm(ModelForm):
         widgets = { 
             'content': Textarea(
                 attrs={
-                    'class': 'post-create__content',
+                    'class': 'form__post-content',
                     'placeholder': 'What\'s chirping?',
+                    'maxlength': 250,
                     'rows': 5,
+                }
+            ),
+            'status': Select(
+                attrs={
+                    'class': 'form__post-status'
                 }
             )
         }
