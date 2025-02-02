@@ -1,0 +1,29 @@
+<section class="post__actions">
+	<form
+		action="{% url 'posts:post_like' post.pk %}"
+		class="form form--post-like"
+		method="post"
+	>
+		{% csrf_token %}
+		<button>
+			<i class='bx bx-star'></i>
+		</button>
+		<label>0</label>
+	</form>
+	<div>
+		<button>
+			<i class='bx bx-message-alt-dots'></i>
+		</button>
+		<label>0</label>
+	</div>
+	<div>
+		<button>
+			<i class='bx bx-share'></i>
+		</button>
+	</div>
+	<p class="post__show_thread">
+		<a class="link" href="#">
+			Show this thread
+		</a>
+	</p>
+</section>
