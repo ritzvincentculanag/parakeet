@@ -3,7 +3,8 @@
 {% load static %}
 
 {% block feed %}
-  <form class="post-create" action="{% url 'posts:post_create' %}" method="post">
+  {# Add chirps form #}
+  <form class="form form--post-newsfeed" action="{% url 'posts:post_create' %}" method="post">
     {% csrf_token %}
     {{ form.content.as_field_group }}
     <div class="post-create__actions">
@@ -11,53 +12,10 @@
       <input type="submit" value="Post">
     </div>
   </form>
+
+  {# List of chirps #}
   {% for post in posts %}
-    <article class="post">
-      <div class="post__body">
-        <div class="post__avatar">
-          <img src="{% static 'img/kid.jpg' %}" alt="Profile picture">
-        </div>
-        <div class="post__info">
-          <section class="post__handle">
-            <h2 class="handle__name">
-              {% if post.author.first_name %}
-                {{ post.author.first_name }}
-              {% else %}
-                {{ post.author.username }}
-              {% endif %}
-            </h2>
-            <h3 class="handle__username">@{{ post.author.username }}</h3>
-          </section>
-          <section class="post__content">
-            <p>{{ post.content }}</p>
-          </section>
-          <form class="post__actions">
-            <div class="form-group form-group__like">
-              <button>
-                <i class='bx bx-star'></i>
-              </button>
-              <label>{{ post.likes }}</label>
-            </div>
-            <div class="form-group form-group__comment">
-              <button>
-                <i class='bx bx-message-alt-dots'></i>
-              </button>
-              <label>0</label>
-            </div>
-            <div class="form-group form-group__share">
-              <button>
-                <i class='bx bx-share'></i>
-              </button>
-            </div>
-            <p class="post__show-thread">
-              <a class="link" href="#">
-                Show this thread
-              </a>
-            </p>
-          </form>
-        </div>
-      </div>
-      
-    </article>
+    {% include "posts/components/chirp.html" with post=post %}
+		{% include "posts/components/chirp_actions.html" with post=post %}
   {% endfor %}
 {% endblock feed %}
