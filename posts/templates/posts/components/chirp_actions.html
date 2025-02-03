@@ -1,29 +1,29 @@
 <section class="post__engagements">
-	<form
-		action="{% url 'posts:post_like' post.pk %}"
-		class="engagement engagement--like"
-		method="post"
-	>
-		{% csrf_token %}
-		<button>
-			<i class='bx bx-star'></i>
-		</button>
-		<label class="like__counter">{{ post.likes.count }}</label>
-	</form>
-	<div class="engagement engagement--reply">
-		<button>
-			<i class='bx bx-message-alt-dots'></i>
-		</button>
-		<label>0</label>
-	</div>
-	<div class="engagement engagement--share">
-		<button>
-			<i class='bx bx-share'></i>
-		</button>
-	</div>
-	<p class="post__show">
-		<a class="link" href="#">
-			Show this thread
-		</a>
-	</p>
+  <form
+    action="{% url 'posts:post_like' post.pk %}"
+    class="engagement engagement--like"
+    method="post"
+  >
+    {% csrf_token %}
+    <button>
+      <i class='bx bx-star'></i>
+    </button>
+    <label class="like__counter">{{ post.likes.count }}</label>
+  </form>
+  <div class="engagement engagement--reply">
+    <button>
+      <i class='bx bx-message-alt-dots'></i>
+    </button>
+    <label>0</label>
+  </div>
+  <div class="engagement engagement--share">
+    <button>
+      <i class='bx bx-share'></i>
+    </button>
+  </div>
+  <p class="post__show">
+    <a class="link" href="#">
+      Show this thread
+    </a>
+  </p>
 </section>

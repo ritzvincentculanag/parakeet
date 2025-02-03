@@ -6,12 +6,12 @@ from .models import Post
 class PostForm(ModelForm):
     class Meta:
         model = Post
-        fields = ['content','status']
-        labels = { 
+        fields = ['content', 'status']
+        labels = {
             'content': '',
             'status': '',
         }
-        widgets = { 
+        widgets = {
             'content': Textarea(
                 attrs={
                     'class': 'form__post-content',

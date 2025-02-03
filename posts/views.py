@@ -1,6 +1,5 @@
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import redirect, render
 from django.urls import reverse
-from pkg_resources import resource_dir
 
 from posts.forms import PostForm
 from posts.models import Post, Like
@@ -13,11 +12,12 @@ def post_list(request):
     return render(
         request=request,
         template_name='posts/list.html',
-        context={ 
+        context={
             'posts': posts,
-            'form': form 
+            'form': form
         }
     )
+
 
 def post_create(request):
     form = PostForm()
@@ -30,12 +30,13 @@ def post_create(request):
             post.save()
 
         return redirect(reverse('posts:post_list'))
-    
+
     return render(
         request=request,
         template_name='posts/list.html',
-        context= { 'form': form }
+        context={'form': form}
     )
+
 
 def post_like(request, post_id):
     author = request.user
@@ -49,4 +50,3 @@ def post_like(request, post_id):
         like.save()
 
     return redirect(reverse('posts:post_list'))
-

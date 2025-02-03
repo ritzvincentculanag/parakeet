@@ -7,7 +7,7 @@ class PostModelManager(models.Manager):
         return (
             super().get_queryset().filter(status=Post.Status.PUBLISHED)
         )
-    
+
 
 class Post(models.Model):
     class Status(models.TextChoices):
@@ -18,7 +18,7 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
         max_length=3,
-        choices=Status, 
+        choices=Status,
         default=Status.PUBLISHED
     )
     author = models.ForeignKey(

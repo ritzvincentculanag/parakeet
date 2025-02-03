@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -20,8 +19,10 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('content', models.CharField(max_length=250)),
                 ('created', models.DateTimeField(auto_now_add=True)),
-                ('status', models.CharField(choices=[('DFT', 'Draft'), ('PBL', 'Published')], default='PBL', max_length=3)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posts', to=settings.AUTH_USER_MODEL)),
+                ('status',
+                 models.CharField(choices=[('DFT', 'Draft'), ('PBL', 'Published')], default='PBL', max_length=3)),
+                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posts',
+                                             to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'ordering': ['-created'],
@@ -32,8 +33,10 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created', models.DateTimeField(auto_now_add=True)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='likes', to=settings.AUTH_USER_MODEL)),
-                ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='likes', to='posts.post')),
+                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='likes',
+                                             to=settings.AUTH_USER_MODEL)),
+                ('post',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='likes', to='posts.post')),
             ],
         ),
         migrations.AddIndex(
