@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from pkg_resources import resource_dir
 
 from posts.forms import PostForm
 from posts.models import Post, Like
@@ -37,4 +38,15 @@ def post_create(request):
     )
 
 def post_like(request, post_id):
-    pass
+    author = request.user
+    post = Post.objects.get(id=post_id)
+    like = Like.objects.filter(post=post, author=author)
+
+    if like.exists():
+        like.delete()
+    else:
+        like = Like.objects.create(post=post, author=author)
+        like.save()
+
+    return redirect(reverse('posts:post_list'))
+
