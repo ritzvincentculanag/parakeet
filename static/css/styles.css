@@ -11,11 +11,11 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: sans-serif;
 }
 
 body {
 	background: var(--clr-bg-light);
+	font-family: "Lato", sans-serif;
 }
 
 header {
