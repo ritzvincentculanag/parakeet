@@ -1,6 +1,6 @@
 {% load static %}
 
-<article class="post">
+<article class="post" data-liked="{% if post.author.username == user.username %}">
 	<section class="post__avatar">
 		<img class="post__avatar__img" src="{% static 'img/kid.jpg' %}" alt="Profile picture">
 	</section>
