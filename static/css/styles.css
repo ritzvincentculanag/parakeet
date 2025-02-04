@@ -29,6 +29,7 @@ main {
   margin: auto;
   overflow-y: hidden;
   width: 80%;
+  min-height: 0;
 }
 
 img {
@@ -130,9 +131,9 @@ a:hover {
 /* feed styles */
 .feed {
   cursor: pointer;
-  height: 100%;
   margin-top: 24px;
   overflow-y: scroll;
+  height: calc(100vh - 8%);
 }
 
 /* Chirps form styles */
@@ -192,12 +193,6 @@ a:hover {
 
 .form__post-submit:active {
   filter: brightness(90%);
-}
-
-/* post styles */
-.posts {
-  overflow-y: scroll;
-  height: 100%;
 }
 
 .posts .post:first-child {
