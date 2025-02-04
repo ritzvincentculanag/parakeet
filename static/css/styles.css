@@ -16,6 +16,7 @@
 body {
   background: var(--clr-bg-light);
   font-family: "Lato", sans-serif;
+  overflow: hidden;
 }
 
 header {
@@ -194,6 +195,11 @@ a:hover {
 }
 
 /* post styles */
+.posts {
+  overflow-y: scroll;
+  height: 100%;
+}
+
 .posts .post:first-child {
   border-top: 1px solid var(--clr-stroke);
 }
@@ -249,13 +255,13 @@ a:hover {
   gap: 32px;
 }
 
-.engagement {
+.post__engagement {
   align-items: center;
   display: flex;
   gap: 16px;
 }
 
-.engagement button {
+.post__engagement button {
   background: none;
   border: none;
   cursor: pointer;
