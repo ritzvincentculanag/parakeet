@@ -20,19 +20,28 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-                  path(route='admin/', view=admin.site.urls),
-                  path(
-                      route='pages/',
-                      view=include(
-                          'pages.urls',
-                          namespace='pages'
-                      )
-                  ),
-                  path(
-                      route='posts/',
-                      view=include(
-                          'posts.urls',
-                          namespace='posts'
-                      )
-                  ),
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path(route='admin/', view=admin.site.urls),
+    path(
+        route='pages/',
+        view=include(
+            arg='pages.urls',
+            namespace='pages'
+        )
+    ),
+    path(
+        route='posts/',
+        view=include(
+            arg='posts.urls',
+            namespace='posts'
+        )
+    ),
+    path(
+        route='profiles',
+        view=include(
+            arg='profiles.urls',
+            namespace='profiles'
+        )
+    )
+]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
